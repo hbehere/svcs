@@ -122,5 +122,11 @@ class Commit(Object):
         data['date'] = datetime.datetime.utcfromtimestamp(data['date'])
         if not data['parent']:
             data['parent'] = None
-        return self(**data)
+            
+        # Unicode issue - This version has some problem
+        data_dict_with_str_as_key = {}
+        for k,v in data.items():
+            data_dict_with_str_as_key[str(k)] = v
+            
+        return self(**data_dict_with_str_as_key)
 
