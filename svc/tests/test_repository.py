@@ -6,5 +6,5 @@ def test_create_repository():
     """
     Creates and initilizes repository
     """
-    test_repository = Repository()
-    assert os.path.exists(test_repository.location)
+    test_repository = Repository("D:\\test_svc")
+    assert test_repository.storage_path == "D:\\test_svc\\.svcs"
