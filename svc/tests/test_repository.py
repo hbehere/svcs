@@ -8,3 +8,4 @@ def test_create_repository():
     """
     test_repository = Repository("D:\\test_svc")
     assert test_repository.storage_path == "D:\\test_svc\\.svcs"
+    assert os.path.exists(test_repository.storage_path)
