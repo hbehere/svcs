@@ -45,5 +45,4 @@ def test_log(repository_path):
     """
     
     test_repository = Repository(repository_path)
-    commit_id = '3333'
-    test_repository.log(commit_id=commit_id)
+    test_repository.log()
