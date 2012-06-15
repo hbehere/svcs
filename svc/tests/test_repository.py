@@ -38,3 +38,12 @@ def test_commit(repository_path):
     commit_path = os.path.join(repository_path, ".svcs", "objects", str(commit_id))
 
     os.path.exists(commit_path)
+    
+def test_log(repository_path):
+    """
+    Test to check log for given commit
+    """
+    
+    test_repository = Repository(repository_path)
+    commit_id = '3333'
+    test_repository.log(commit_id=commit_id)
