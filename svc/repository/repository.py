@@ -47,7 +47,7 @@ class Repository(object):
             s_file_id = s_file.id
 
             # Store file object
-            self.storage.store_object(s_file)
+            self.storage.store_object(obj=s_file)
 
             # Update file ids list
             file_ids.append((eachFile, s_file_id))
@@ -59,6 +59,12 @@ class Repository(object):
                      parent=None,
                      files=file_ids,
                      )
+
+        # Store commit as object
+        self.storage.store_object(obj=s_c)
+
+        # Update tip with commit
+        self.storage.update_tip(commit=s_c)
 
         # Get commit id
         commit_id = s_c.id

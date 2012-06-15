@@ -37,7 +37,7 @@ def test_commit(repository_path):
 
     commit_path = os.path.join(repository_path, ".svcs", "objects", str(commit_id))
 
-    os.path.exists(commit_path)
+    assert os.path.exists(commit_path)
     
 def test_log(repository_path):
     """
