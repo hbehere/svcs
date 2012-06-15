@@ -45,4 +45,4 @@ def test_log(repository_path):
     """
     
     test_repository = Repository(repository_path)
-    test_repository.log()
+    assert not test_repository.log()

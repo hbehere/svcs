@@ -71,3 +71,9 @@ class Repository(object):
 
         # Return commit id
         return commit_id
+    
+    def log(self):
+        """
+        This method return log for latest commit and all related parent commit
+        """
+        pass

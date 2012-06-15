@@ -47,8 +47,12 @@ class FileStorage(Storage):
         with open(self.tip, "wb") as f:
             f.write(commit.id)
             
-            
-        
+    def get_tip(self):
+        """
+        Returns tip contents (id of commit)
+        """
+        tf = open(self.tip, "rb")
+        tip_content = tf.read()
+        tf.close()
 
-
-        
+        return tip_content
